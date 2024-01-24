@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import static controllers.NotasMain.actualizarTabla;
 
 public class NotasForm {
+    private static final Color COLOR_BACKGROUND = Color.decode("#EEF5FF");
+    private static final Color COLOR_PRINCIPAL = Color.WHITE;
+    private static final Color COLOR_PRINCIPAL_VARIANTE = Color.decode("#B4D4FF");
+    private static final Color COLOR_FUENTE = Color.BLACK;
     JPanel mainPanel;
     private JLabel lNombre;
     private JLabel lApellidos;
@@ -44,6 +48,10 @@ public class NotasForm {
     };
 
     public NotasForm(JFrame frame, JTable table, ArrayList<Nota> notas){
+        mainPanel.setBackground(COLOR_BACKGROUND);
+        bGuardar.setBackground(COLOR_PRINCIPAL);
+        bCancelar.setBackground(COLOR_PRINCIPAL);
+
         taNota.setLineWrap(true);
         taNota.setWrapStyleWord(true);
         tfNombre.requestFocus();
@@ -74,6 +82,10 @@ public class NotasForm {
     }
 
     public NotasForm(JFrame frame, JTable table, ArrayList<Nota> notas, Nota notaSeleccionada){
+        mainPanel.setBackground(COLOR_BACKGROUND);
+        bGuardar.setBackground(COLOR_PRINCIPAL);
+        bCancelar.setBackground(COLOR_PRINCIPAL);
+
         tfNombre.setText(notaSeleccionada.getNombre());
         tfApellidos.setText(notaSeleccionada.getApellidos());
         taNota.setText(notaSeleccionada.getNota());

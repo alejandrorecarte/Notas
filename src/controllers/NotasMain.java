@@ -1,7 +1,9 @@
 package controllers;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -10,6 +12,10 @@ import java.util.ResourceBundle;
 import models.Nota;
 
 public class NotasMain {
+    private static final Color COLOR_BACKGROUND = Color.WHITE;
+    private static final Color COLOR_PRINCIPAL = Color.decode("#EEF5FF");
+    private static final Color COLOR_PRINCIPAL_VARIANTE = Color.decode("#B4D4FF");
+    private static final Color COLOR_FUENTE = Color.BLACK;
     private final Dimension SIZE = new Dimension(400, 400);
     private static ArrayList<Nota> notas;
     private Nota notaSeleccionada;
@@ -26,6 +32,13 @@ public class NotasMain {
     private JButton bEliminar;
 
     public NotasMain(JFrame frame) {
+        mainPanel.setBackground(COLOR_BACKGROUND);
+        bCrear.setBackground(COLOR_PRINCIPAL);
+        bModificar.setBackground(COLOR_PRINCIPAL);
+        bEliminar.setBackground(COLOR_PRINCIPAL);
+        table.setBackground(COLOR_PRINCIPAL);
+        table.getTableHeader().setBackground(COLOR_PRINCIPAL_VARIANTE);
+
         try{
             notas = controllers.Streams.importarNotas();
         }catch (IOException e){
@@ -137,12 +150,30 @@ public class NotasMain {
             data[i] = row;
         }
         table.setModel(new DefaultTableModel(data, nombreColumnas));
+        table.setCellSelectionEnabled(false);
         table.repaint();
         table.revalidate();
     }
     private void setEnabledButtons (boolean crear, boolean modificar, boolean eliminar){
+        if(crear){
+            bCrear.setBackground(COLOR_PRINCIPAL);
+        }else{
+            bCrear.setBackground(COLOR_PRINCIPAL_VARIANTE);
+        }
         bCrear.setEnabled(crear);
+
+        if(modificar){
+            bModificar.setBackground(COLOR_PRINCIPAL);
+        }else{
+            bModificar.setBackground(COLOR_PRINCIPAL_VARIANTE);
+        }
         bModificar.setEnabled(modificar);
+
+        if(eliminar){
+            bEliminar.setBackground(COLOR_PRINCIPAL);
+        }else{
+            bEliminar.setBackground(COLOR_PRINCIPAL_VARIANTE);
+        }
         bEliminar.setEnabled(eliminar);
     }
 

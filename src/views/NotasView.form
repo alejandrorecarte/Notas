@@ -48,6 +48,7 @@
               <gridbag top="3" left="3" bottom="3" right="3" weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
+              <background color="-8857345"/>
               <text resource-bundle="languages" key="bCrear"/>
             </properties>
           </component>
