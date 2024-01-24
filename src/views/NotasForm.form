@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="controllers.NotasForm">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="2e8ab" class="javax.swing.JLabel" binding="lNombre">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="10" left="10" bottom="3" right="3" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="languages" key="lNombre"/>
+        </properties>
+      </component>
+      <component id="3c69d" class="javax.swing.JLabel" binding="lApellidos">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="3" left="10" bottom="3" right="3" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="languages" key="lApellidos"/>
+        </properties>
+      </component>
+      <component id="ec4c6" class="javax.swing.JLabel" binding="lNota">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="3" left="10" bottom="3" right="3" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="languages" key="lNota"/>
+        </properties>
+      </component>
+      <component id="523b6" class="javax.swing.JTextField" binding="tfNombre">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag top="10" left="3" bottom="3" right="10" weightx="5.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="e2dcd" class="javax.swing.JTextField" binding="tfApellidos">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag top="3" left="3" bottom="3" right="10" weightx="5.0" weighty="1.0"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="37e39" class="javax.swing.JButton" binding="bGuardar">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="3" left="3" bottom="10" right="10" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="languages" key="bGuardar"/>
+        </properties>
+      </component>
+      <scrollpane id="ae280" binding="panelScrollNota">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag top="3" left="3" bottom="3" right="10" weightx="5.0" weighty="5.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="457f6" class="javax.swing.JTextArea" binding="taNota">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="73170" class="javax.swing.JButton" binding="bCancelar">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="3" left="10" bottom="10" right="3" weightx="1.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="languages" key="bCancelar"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
