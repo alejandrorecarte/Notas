@@ -30,14 +30,28 @@ public class NotasMain {
     private JButton bCrear;
     private JButton bModificar;
     private JButton bEliminar;
+    private JButton bNoche;
+    private JButton bAyuda;
 
     public NotasMain(JFrame frame) {
         mainPanel.setBackground(COLOR_BACKGROUND);
         bCrear.setBackground(COLOR_PRINCIPAL);
+        bCrear.setFocusPainted(false);
+        aplicarIcono("src/resources/icons/crear.png", bCrear, 15,15);
         bModificar.setBackground(COLOR_PRINCIPAL);
+        bModificar.setFocusPainted(false);
+        aplicarIcono("src/resources/icons/modificar.png", bModificar, 15,15);
         bEliminar.setBackground(COLOR_PRINCIPAL);
+        bEliminar.setFocusPainted(false);
+        aplicarIcono("src/resources/icons/eliminar.png", bEliminar, 15,15);
         table.setBackground(COLOR_PRINCIPAL);
         table.getTableHeader().setBackground(COLOR_PRINCIPAL_VARIANTE);
+        bNoche.setBackground(COLOR_PRINCIPAL);
+        bNoche.setFocusPainted(false);
+        aplicarIcono("src/resources/icons/noche.png", bNoche, 15,15);
+        bAyuda.setBackground(COLOR_PRINCIPAL);
+        bAyuda.setFocusPainted(false);
+        aplicarIcono("src/resources/icons/ayuda.png", bAyuda, 15,15);
 
         try{
             notas = controllers.Streams.importarNotas();
@@ -127,7 +141,12 @@ public class NotasMain {
             }
         });
 
-        table.requestFocus();
+        bAyuda.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("languages").getString("lAyudaCuerpo"), ResourceBundle.getBundle("languages").getString("lAyudaTitulo"),JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
@@ -141,6 +160,8 @@ public class NotasMain {
                 }
             }
         });
+
+        table.requestFocus();
     }
 
     public static void actualizarTabla(JTable table){
@@ -175,6 +196,13 @@ public class NotasMain {
             bEliminar.setBackground(COLOR_PRINCIPAL_VARIANTE);
         }
         bEliminar.setEnabled(eliminar);
+    }
+
+    private static void aplicarIcono(String path, JButton button,int ancho, int alto) {
+        ImageIcon icono = new ImageIcon(path);
+        Image imagen = icono.getImage().getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+        ImageIcon iconoEscalado = new ImageIcon(imagen);
+        button.setIcon(iconoEscalado);
     }
 
     public ArrayList<Nota> getNotas() {
